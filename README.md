@@ -4,6 +4,14 @@ Project Saklar berbasis IoT menggunakan Esp8266 (NodeMCU) dan ESP32
 
 ## Dokumentasi
 
+Dokumentasi untuk memudahkan menggunaan Project
+
+1. [Sketch Untuk Hardware](#sketch-untuk-hardware)
+2. [Wiring Diagram pada Hardware](#wiring-diagram-pada-hardware)
+3. [Block Diagram Untuk Aplikasi Android](#block-diagram-untuk-aplikasi-android)
+
+### Sketch Untuk Hardware
+
 Sketch file untuk mikrokontroler terletak pada [code.ino](project/code/code.ino)
 
 Project ini menggunakan beberapa library tambahan untuk koneksi ke database dan pharsing json
@@ -26,6 +34,8 @@ Library [ArduinoJson](https://github.com/bblanchon/ArduinoJson) untuk pharsing j
 ```cpp
 #include <ArduinoJson.h>
 ```
+
+Deklarasi Objek & variabel yang dibutuhkan
 
 ```cpp
 /* 1. Define the WiFi credentials */
@@ -54,6 +64,8 @@ FirebaseConfig config;
 int val1, val2, val3, val4;
 ```
 
+Inisialisasi I/O dan melakukan persiapan koneksi WiFi
+
 ```cpp
 void setup()
 {
@@ -75,6 +87,18 @@ void setup()
   Serial.print("Connected with IP: ");
   Serial.println(WiFi.localIP());
   Serial.println();
+```
+
+Melakukan koneksi ulang ketika sambungan WiFi terputus
+
+```cpp
+  WiFi.setAutoReconnect(true);
+  WiFi.persistent(true);
+```
+
+Menampilkan versi client, dan melakukan koneksi ke Firebase
+
+```cpp
   Serial.printf("Firebase Client v%s\n\n", FIREBASE_CLIENT_VERSION);
 
   /* Assign the certificate file (optional) */
@@ -171,3 +195,37 @@ void loop()
   }
 }
 ```
+
+### Wiring Diagram pada Hardware
+
+### Block Diagram Untuk Aplikasi Android
+
+Aplikasi pada Android dibuat menggunakan [App Inventor](http://ai2.appinventor.mit.edu) berikut adalah block programing yang digunakan pada aplikasi
+
+#### Komponen yang digunakan
+
+![0](docs/img/0.png)
+
+#### Inisaialisasi Saat aplikasi di buka
+
+![1](docs/img/1.png)
+
+#### Mengambil seluruh data state yang ada di database
+
+![5](docs/img/5.png)
+
+#### Prosedur saat On/Off
+
+![3](docs/img/3.png)
+
+#### Prosedur saat tombol On/Off ditekan
+
+![4](docs/img/4.png)
+
+#### Mengaktifkan fitur Perintah Suara
+
+![2](docs/img/2.png)
+
+#### Prosedur saat perintah suara selesai dilakukan
+
+![6](docs/img/6.png)
