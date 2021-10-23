@@ -80,7 +80,7 @@ void setup()
 void loop()
 {
   Serial.printf("Get json... %s\n", Firebase.getJSON(fbdo, "IoT") ? fbdo.to<FirebaseJson>().raw() : fbdo.errorReason().c_str());
-  
+
   // Patch data from DB
   String data = fbdo.to<FirebaseJson>().raw();
 
@@ -99,47 +99,47 @@ void loop()
   val3 = doc["L3"];
   val4 = doc["L4"];
 
-  if (val1 == 0)
+  if (val1 == 1)
   {
     digitalWrite(Relay1, LOW);
     digitalWrite(LED_BUILTIN, LOW);
     Serial.println("light 1 ON");
   }
-  else if (val1 == 1)
+  else if (val1 == 0)
   {
     digitalWrite(Relay1, HIGH);
     digitalWrite(LED_BUILTIN, HIGH);
     Serial.println("light 1 OFF");
   }
 
-  if (val2 == 0)
+  if (val2 == 1)
   {
     digitalWrite(Relay2, LOW);
     Serial.println("light 2 ON");
   }
-  else if (val2 == 1)
+  else if (val2 == 0)
   {
     digitalWrite(Relay2, HIGH);
     Serial.println("light 2 OFF");
   }
 
-  if (val3 == 0)
+  if (val3 == 1)
   {
     digitalWrite(Relay3, LOW);
     Serial.println("light 3 ON");
   }
-  else if (val3 == 1)
+  else if (val3 == 0)
   {
     digitalWrite(Relay3, HIGH);
     Serial.println("light 3 OFF");
   }
 
-  if (val4 == 0) // Jika nilai =  Saklar Dimatikan
+  if (val4 == 1) // Jika nilai =  Saklar Dimatikan
   {
     digitalWrite(Relay4, LOW);
     Serial.println("light 4 ON");
   }
-  else if (val4 == 1) // Jika nilai = 1 Saklar Dimatikan
+  else if (val4 == 0) // Jika nilai = 1 Saklar Dimatikan
   {
     digitalWrite(Relay4, HIGH);
     Serial.println("light 4 OFF");
