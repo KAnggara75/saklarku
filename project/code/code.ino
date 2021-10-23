@@ -54,6 +54,9 @@ void setup()
   Serial.println();
   Serial.print("Connected with IP: ");
   Serial.println(WiFi.localIP());
+  WiFi.setAutoReconnect(true);
+  WiFi.persistent(true);
+  
   Serial.println();
   Serial.printf("Firebase Client v%s\n\n", FIREBASE_CLIENT_VERSION);
 
