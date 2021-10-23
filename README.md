@@ -200,7 +200,7 @@ void loop()
 
 ### Block Diagram Untuk Aplikasi Android
 
-Aplikasi pada Android dibuat menggunakan [App Inventor](http://ai2.appinventor.mit.edu) berikut adalah block programing yang digunakan pada aplikasi
+Aplikasi pada Android dibuat menggunakan [App Inventor](http://ai2.appinventor.mit.edu) berikut adalah block programing yang digunakan pada aplikasi, Aplikasi yang sudah selesai dapat di unduh pada bagian Release ataupun [disini](project/app/SaklarKu.apk) dan file project App Inventor [disini](project/app/SaklarKu.apk)
 
 #### Komponen yang digunakan
 
